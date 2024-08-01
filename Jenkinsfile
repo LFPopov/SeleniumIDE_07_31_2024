@@ -42,8 +42,7 @@ pipeline {
             step ([
                 $class: 'MSTestPublisher',
                 testResultsFile: '**/TestResults.trx/*'
-            ])
-        
-    }
-
+            ])        
+            }
+        }
 }
