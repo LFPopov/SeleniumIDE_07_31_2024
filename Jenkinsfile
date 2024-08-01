@@ -40,8 +40,10 @@ pipeline {
         always {
             archiveArtifacts artifacts: '**/TestResults.trx/*', allowEmptyArchive: true
             step ([
-                $class: 'MSTestPublisher',
-                testResultsFile: '**/TestResults.trx/*'
+                $class: 'MSTestPublisher', 
+                testResultsFile:"**/*.trx", 
+                failOnError: true, 
+                keepLongStdio: true
             ])        
             }
         }
